@@ -1,4 +1,17 @@
 # Creando una Red Social
+La estructura básica de las redes sociales son dos partes principalmente, los nodos y las conexiones. Los nodos vendrían a ser las personas y las conexiones serían las interacciones que hay entre ellas.
+
+Los principales usuarios de la red social que planteamos, serían los médicos y estudiantes de medicina que tienen interés en interactuar con sus pares e intercambiar conocimientos.
+
+Dentro del benchmarking que hicimos, encontramos 3 grandes redes medicas: Sermo, Esanum y Medscape.
+
+Sermo: es la red médica más grande que encontramos, es una red anónima, que ofrece soluciones colectivas a casos clínicos y ayuda diagnostica. Ayuda en tiempo real a través de móvil, encuestas en casos médicos y paga a miembros por llenado de encuestas. Lo que más llama a los usuarios de esta red es el poder quedar en el anonimato cuando hacen comentarios sobre ciertas cosas y así evitan problemas en su lugar de trabajo. Esta red si pide algún tipo de validación de la profesión médica, ya sea con un número de carnet médico o una foto
+
+Esanum es una red para compartir artículos pero tiene un enfoque más de comunidad o revista médica, donde hay conferencias online y discusiones tipo foro. Esta página también pide una validación de ser profesional de la salud.
+
+Medscape es bastante parecida a Esanum, pero a diferencia de las otras, no pide alguna validación de la profesión, también sirve para leer artículos y valoraciones.
+
+De las tres grandes redes revisadas, solo Sermo es responsive. También pudimos revisar páginas pequeñas pero son más que todo para intercambio de información y no son responsive.
 
 ## Preámbulo
 
