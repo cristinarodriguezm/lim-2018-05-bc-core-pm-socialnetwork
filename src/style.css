@@ -1,0 +1,46 @@
+body{
+    background: white;
+    display: flex;
+    min-height: 100vh;
+}
+
+form{
+    margin: auto;
+    width: 50%;
+    max-width: 350px;
+    background: white;
+    padding: 30px;
+    border: 1px solid rgba(0, 0, 0,0.2);
+}
+
+img,div{
+    text-align: center;
+    width: 70%;
+    padding-left: 16%; 
+}
+
+input{
+    display: block;
+    padding: 5px;
+    width: 100%;
+    margin: 30px 0;
+    font-size: 15px;
+}
+
+input[type="button"]{
+    background: linear-gradient(rgb(113, 236, 215), rgb(66, 215, 235));
+    border: 0;
+    color: black;
+    opacity: 0.95;
+    cursor: pointer;
+    border-radius:20px;
+    margin-bottom: 0;
+}
+
+input[type="button"]:hover{
+    opacity: 1;
+}
+
+input[type="button"]:active{
+    transform: scale(0.96);
+}
