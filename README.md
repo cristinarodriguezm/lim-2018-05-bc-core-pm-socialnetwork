@@ -30,7 +30,7 @@ El producto tiene como finalidad unir redes de médicos, para que estos puedan h
 
 Despues de definir nuestro producto y las ideas que queriamos llevar a cabo, comenzamos a elaborar distintas vistas en prototipos de baja fidelidad como en las imagenes que se muestra a continuación.
 
-![Imagen 1][1]  ![Imagen 2][2] ![Imagen 3][3] ![Imagen 4][4] ![Imagen 4][4]
+![Imagen 1][1]  ![Imagen 2][2] ![Imagen 3][3] ![Imagen 4][4] ![Imagen 5][5]
 
  [1]: images/IMG_20180720_152652.jpg
  [2]: images/IMG_20180720_154815.jpg
