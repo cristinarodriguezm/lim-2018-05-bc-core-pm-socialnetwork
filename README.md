@@ -1,17 +1,42 @@
 # Creando una Red Social
-La estructura básica de las redes sociales son dos partes principalmente, los nodos y las conexiones. Los nodos vendrían a ser las personas y las conexiones serían las interacciones que hay entre ellas.
 
-Los principales usuarios de la red social que planteamos, serían los médicos y estudiantes de medicina que tienen interés en interactuar con sus pares e intercambiar conocimientos.
-
+El mercado de las redes sociales es un rubro que está cambiando constantemente desde su aparición hace algunos años.
+Después de investigar un poco sobre los distintos rubros llegamos a la conclusión que no habían muchas redes sociales en el rubro de la medicina, y las que hay no son muy variadas ni ofrecen mucha conexión entre usuarios, más que ciertos comentarios u opiniones sueltas. Es por eso que los principales usuarios de la red social que planteamos, serían los médicos y estudiantes de medicina que tienen interés en interactuar con sus pares e intercambiar conocimientos.
+La estructura básica de las redes sociales son dos partes principalmente, los nodos y las conexiones. Los nodos vendrían a ser las personas y las conexiones serían las interacciones que hay entre ellas y en eso nos basamos para comenzar a investigar qué cosas ya existían en el mercado y que cosas podríamos ofrecer nosotras para hacer la diferencia.
 Dentro del benchmarking que hicimos, encontramos 3 grandes redes medicas: Sermo, Esanum y Medscape.
-
 Sermo: es la red médica más grande que encontramos, es una red anónima, que ofrece soluciones colectivas a casos clínicos y ayuda diagnostica. Ayuda en tiempo real a través de móvil, encuestas en casos médicos y paga a miembros por llenado de encuestas. Lo que más llama a los usuarios de esta red es el poder quedar en el anonimato cuando hacen comentarios sobre ciertas cosas y así evitan problemas en su lugar de trabajo. Esta red si pide algún tipo de validación de la profesión médica, ya sea con un número de carnet médico o una foto
-
 Esanum es una red para compartir artículos pero tiene un enfoque más de comunidad o revista médica, donde hay conferencias online y discusiones tipo foro. Esta página también pide una validación de ser profesional de la salud.
-
 Medscape es bastante parecida a Esanum, pero a diferencia de las otras, no pide alguna validación de la profesión, también sirve para leer artículos y valoraciones.
+De las tres grandes redes revisadas, solo Sermo es responsive. También pudimos revisar páginas pequeñas pero son más que todo para intercambio de información, no son muy vistosas ni atractivas y tampoco amigables con dispositivos móviles.
+Como primer paso aplicamos encuestas para tener una idea de que porcentaje de médicos estarían interesados en participar en una red social de este tipo. Después de eso, elegimos a unas cuantas personas, de las que habían respondido que si estarían interesadas en una red social médica, para una entrevista en la que les hicimos las siguientes preguntas:
 
-De las tres grandes redes revisadas, solo Sermo es responsive. También pudimos revisar páginas pequeñas pero son más que todo para intercambio de información y no son responsive.
+      *  ¿Qué redes sociales usas?
+      *  ¿Qué es lo que te motivaría a unirte a una red social?
+      *  ¿Cuántas veces al día revisas las redes sociales?
+      *  ¿Sueles compartir contenido? (¿Qué tipo de contenido?)
+      *  En la encuesta que realizamos de manera virtual, nos contaste que te gustaría tener una red de médicos con los      cuales poder compartir información e intercambiar opiniones: 
+      *  ¿Estás buscando alguna red social?
+      *  ¿Te interesaría tener una red social en la cual puedas tener intercambios de opinión de manera anónima?
+      *  Cuéntame sobre la última vez que encontraste una red (comunidad) médica a la que te uniste.
+      *  En la actualidad, ¿para qué usas las redes sociales a las que estas subscrito?
+      *  ¿Tienes algún problema/dificultad con las redes que usas?
+      *  Si es así, ¿Cómo crees que podrían solucionarse esos problemas?
+
+Este producto resolvería los problemas del usuario al brindarles una interfaz que junte varias cosas de su interés en un solo sitio y de una manera práctica. Descubrimos que el usuario quiere un producto práctico, fácil de usar y que les brinde información pertinente y/o necesaria.
+
+El producto tiene como finalidad unir redes de médicos, para que estos puedan hacer intercambios de información, opiniones y al mismo tiempo brindarles de manera automática recomendaciones de artículos que podrían interesarle, basados en los artículos que leyó dentro de la misma plataforma (de una manera parecida en la que se ve la publicidad de Facebook, Instagram o Twitter); también pensamos en la posibilidad de ofrecer la opción de dar comentarios de manera anónima en ciertas secciones de la red, ya que dentro del benchmarking notamos que algo importante para los usuarios de otras redes es mantener el anonimato en ciertos comentarios para evitar la posibilidad de tener algun problema por un comentario hecho en la red. La prioridad del producto es mantener a los usuarios contentos con él, que lo usen de manera activa y que sea una herramienta útil y confiable para ellos en su trabajo y/o estudios.
+
+## Prototipado
+
+Despues de definir nuestro producto y las ideas que queriamos llevar a cabo, comenzamos a elaborar distintas vistas en prototipos de baja fidelidad como en las imagenes que se muestra a continuación.
+
+![Imagen 1][1]  ![Imagen 2][2] ![Imagen 3][3] ![Imagen 4][4] ![Imagen 4][4]
+
+ [1]: images/IMG_20180720_152652.jpg
+ [2]: images/IMG_20180720_154815.jpg
+ [3]: images/IMG_20180727_142754.jpg
+ [4]: images/IMG_20180727_142806.jpg
+ [5]: images/IMG_20180727_142813.jpg
 
 ## Preámbulo
 
