@@ -10,17 +10,17 @@ Medscape es bastante parecida a Esanum, pero a diferencia de las otras, no pide 
 De las tres grandes redes revisadas, solo Sermo es responsive. También pudimos revisar páginas pequeñas pero son más que todo para intercambio de información, no son muy vistosas ni atractivas y tampoco amigables con dispositivos móviles.
 Como primer paso aplicamos encuestas para tener una idea de que porcentaje de médicos estarían interesados en participar en una red social de este tipo. Después de eso, elegimos a unas cuantas personas, de las que habían respondido que si estarían interesadas en una red social médica, para una entrevista en la que les hicimos las siguientes preguntas:
 
-      *  ¿Qué redes sociales usas?
-      *  ¿Qué es lo que te motivaría a unirte a una red social?
-      *  ¿Cuántas veces al día revisas las redes sociales?
-      *  ¿Sueles compartir contenido? (¿Qué tipo de contenido?)
-      *  En la encuesta que realizamos de manera virtual, nos contaste que te gustaría tener una red de médicos con los      cuales poder compartir información e intercambiar opiniones: 
-      *  ¿Estás buscando alguna red social?
-      *  ¿Te interesaría tener una red social en la cual puedas tener intercambios de opinión de manera anónima?
-      *  Cuéntame sobre la última vez que encontraste una red (comunidad) médica a la que te uniste.
-      *  En la actualidad, ¿para qué usas las redes sociales a las que estas subscrito?
-      *  ¿Tienes algún problema/dificultad con las redes que usas?
-      *  Si es así, ¿Cómo crees que podrían solucionarse esos problemas?
+*  ¿Qué redes sociales usas?
+*  ¿Qué es lo que te motivaría a unirte a una red social?
+*  ¿Cuántas veces al día revisas las redes sociales?
+*  ¿Sueles compartir contenido? (¿Qué tipo de contenido?)
+*  En la encuesta que realizamos de manera virtual, nos contaste que te gustaría tener una red de médicos con los      cuales poder compartir información e intercambiar opiniones: 
+*  ¿Estás buscando alguna red social?
+*  ¿Te interesaría tener una red social en la cual puedas tener intercambios de opinión de manera anónima?
+*  Cuéntame sobre la última vez que encontraste una red (comunidad) médica a la que te uniste.
+*  En la actualidad, ¿para qué usas las redes sociales a las que estas subscrito?
+*  ¿Tienes algún problema/dificultad con las redes que usas?
+*  Si es así, ¿Cómo crees que podrían solucionarse esos problemas?
 
 Este producto resolvería los problemas del usuario al brindarles una interfaz que junte varias cosas de su interés en un solo sitio y de una manera práctica. Descubrimos que el usuario quiere un producto práctico, fácil de usar y que les brinde información pertinente y/o necesaria.
 

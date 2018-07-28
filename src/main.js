@@ -1,45 +1,27 @@
-window.onload = ()=>{
-    firebase.auth().onAuthStateChanged((user)=>{
-        if(user){
-            loggedIn.style.display = "block";
-            loggedOut.style.display = "none";
-        }
-        else{
-            loggedIn.style.display = "none";
-            loggedOut.style.display = "block";
-        }
-        console.log("User >"+JSON.stringify(user));
-    });
+const logOut = document.getElementById("btnLogout");
+const signIn = document.getElementById("signinbtn");
+const register = document.getElementById("register");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
 
-}
 
-function registerWithFirebase () {
-    const emailValue = email.value;
-    const passwordValue = password.value;
-
-    firebase.auth().createUserWithEmailAndPassword(emailValue, passwordValue)
-    .then(() => {
-        console.log("Usuario creado con exito");
+register.addEventListener("click", () => {
+firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
+    .then(function () {
+        console.log("Se creo el usuario");
     })
-
-    .catch((error)=> {
-        console.log("Error de firebase > Codigo >"+error.code);
-        console.log("Error de firebase > Mensaje >"+error.message);
+    .catch(function (error) {
+        console.log(error.code, error.message);
     });
-}
+})
 
-function loginWithFirebase () {
-    const emailValue = email.value;
-    const passwordValue = password.value;
+signIn.addEventListener("click", () => {
+firebase.auth().signInWithEmailAndPassword(email.value, password.value)
+.then(function() {
+    console.log("Inicia sesion");
+})
+.catch(function(error) {
+    console.log(error.code, error.message);
+  });
+})
 
-    firebase.auth().signInWithEmailAndPassword(emailValue, passwordValue)
-    .then(()=> {
-        console.log("Usuario logueado con exito");
-
-    })
-
-    .catch((error)=> {
-        console.log("Error de firebase > Codigo >"+error.code);
-        console.log("Error de firebase > Mensaje >"+error.message);
-    });
-}
