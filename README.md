@@ -38,6 +38,17 @@ Despues de definir nuestro producto y las ideas que queriamos llevar a cabo, com
  [4]: images/IMG_20180727_142806.jpg
  [5]: images/IMG_20180727_142813.jpg
 
+ Despues de la etapa de crear prototipos y de recibir feedback de algunas compañeras y de un par de usuarios, vimos que la interfaz era bastante clara y procedimos a crear prototipos de alta fidelidad.
+
+ ![Imagen 1][1]  ![Imagen 2][2] ![Imagen 3][3] ![Imagen 4][4] ![Imagen 5][5]
+
+ [1]: images/login.jpg
+ [2]: images/registro.jpg
+ [3]: images/Home.jpg
+ [4]: images/Menu.jpg
+ [5]: images/user-profile.jpg
+
+
 ## Preámbulo
 
 Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Las redes
