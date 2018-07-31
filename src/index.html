@@ -7,25 +7,52 @@
     <title>Social Network</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" href="css/materialize.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 </head>
 
 <body>
 
-    <div id="login" class = "hidden">
-        <p id="user-name" ></p>
-        <input type="button" id="btnLogout" value="Logout">
-    </div>
-    <div id="logout" class= "hidden">
-        <label for="email">email</label>
-        <input type="email" id="email">
-        <label for="password">password</label>
-        <input type="password" id="password">
-        <input type="button" value="Register" id="register">
-        <input type="button" id="signinbtn" value="signin">
-        <input type="button" id="btnGoogle" value="Google">
-        <input type="button" id="btnFacebook" value="Facebook">
+    <div class="container">
+
+
+        <div id="login" class="hidden">
+            <p id="user-name"></p>
+            <input type="button" id="btnLogout" value="Logout">
+        </div>
+        <div id="logout" class="hidden">
+            <div>
+                <input type="button" id="btnGoogle" value="Continuar con Google">
+            </div>
+            <br>
+            <div>
+                <input type="button" id="btnFacebook" value="Continuar con Facebook">
+            </div>
+            <br>
+            <div>
+                <label for="email">email</label>
+            </div>
+            <div>
+                <input type="email" id="email">
+            </div>
+            <div>
+                <label for="password">password</label>
+            </div>
+            <div>
+                <input type="password" id="password">
+            </div>
+            <br>
+            <div>
+                <input class="btnlogin" type="button" id="signinbtn" value="Iniciar Sesion">
+            </div>
+            <br>
+            <div>
+                <input class="btnlogin" type="button" value="Registrate" id="register">
+            </div>
+
+        </div>
+
 
     </div>
 </body>
@@ -43,6 +70,7 @@
     };
     firebase.initializeApp(config);
 </script>
+<script src="js/materialize.min.js"></script>
 <script src="main.js"></script>
 
 </html>
