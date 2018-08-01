@@ -23,6 +23,8 @@ window.onload = () => {
           console.log("No esta logueado")
           login.classList.add("hidden");
           logout.classList.remove("hidden");
+          wall.classList.add("hidden"); 
+         wallPosts.classList.add("hiden");
         }
       });
 }
