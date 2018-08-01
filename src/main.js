@@ -5,16 +5,20 @@ const email = document.getElementById("email");
 const password = document.getElementById("password");
 const btnGoogle = document.getElementById("btnGoogle");
 const btnFacebook = document.getElementById("btnFacebook");
-const wall = document.getElementById("")
-
+const wall = document.getElementById("wall");
+const btnPost = document.getElementById("btnPost");
+const wallPosts = document.getElementById("wallPosts");
+const textToPost = document.getElementById("textToPost")
 
 
 window.onload = () => {
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
          login.classList.remove("hidden");
-         logout.classList.add("hidden");   
-          console.log("Usuario logueado")
+         logout.classList.add("hidden");  
+         wall.classList.remove("hidden"); 
+         wallPosts.classList.remove("hiden");
+          console.log("Usuario logueado");
         } else {
           console.log("No esta logueado")
           login.classList.add("hidden");
@@ -88,3 +92,10 @@ btnFacebook.addEventListener("click", () => {
        });
 })
 
+function writeUserData(userId, name, email, imageUrl) {
+    firebase.database().ref('users/' + userId).set({
+      username: name,
+      email: email,
+      profile_picture : imageUrl
+    });
+  }
