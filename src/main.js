@@ -5,6 +5,9 @@ const email = document.getElementById("email");
 const password = document.getElementById("password");
 const btnGoogle = document.getElementById("btnGoogle");
 const btnFacebook = document.getElementById("btnFacebook");
+const wall = document.getElementById("")
+
+
 
 window.onload = () => {
     firebase.auth().onAuthStateChanged(function(user) {
