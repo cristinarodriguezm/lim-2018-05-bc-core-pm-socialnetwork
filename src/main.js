@@ -51,6 +51,8 @@ signIn.addEventListener("click", () => {
     firebase.auth().signInWithEmailAndPassword(email.value, password.value)
         .then(function () {
             console.log("Inicia sesion");
+        let user = result.user;
+            writeUserData(user.uid, user.displayName, user.email, user.photoURL)
         })
         .catch(function (error) {
             console.log(error.code, error.message);
@@ -94,6 +96,8 @@ btnFacebook.addEventListener("click", () => {
     firebase.auth().signInWithPopup(provider)
         .then(function (result) {
             console.log("Logueado con Facebook")
+            let user = result.user;
+            writeUserData(user.uid, user.displayName, user.email, user.photoURL)
         }).catch(function (error) {
             console.log(error.code);
             console.log(error.message);
