@@ -4,7 +4,7 @@ window.onload = () => {
             login.classList.add("hidden");
             logout.classList.remove("hidden");
             wall.classList.remove("hidden");
-            posts.classList.remove("hiden");
+            posts.classList.remove("hidden");
             username.innerHTML = `Bienvenida ${user.displayName}`;
             console.log("Usuario logueado");
         } else {
@@ -12,7 +12,7 @@ window.onload = () => {
             login.classList.remove("hidden");
             logout.classList.add("hidden");
             wall.classList.add("hidden");
-            posts.classList.add("hiden");
+            posts.classList.add("hidden");
         }
     });
 }
@@ -44,6 +44,7 @@ window.writeNewPost = (uid, body) => {
 
     firebase.database().ref().update(updates);
     return newPostKey
+    
 }
 
 

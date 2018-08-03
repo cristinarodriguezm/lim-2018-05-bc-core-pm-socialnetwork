@@ -14,7 +14,12 @@ const posts = document.getElementById("posts");
 const username = document.getElementById("user-name");
 
 btnPost.addEventListener('click', () => {
-    var userId = firebase.auth().currentUser.uid;
+    if(post.value===""){
+        alert("Tu post esta vacio")
+    }
+
+    else{
+    let userId = firebase.auth().currentUser.uid;
     const newPost = writeNewPost(userId, post.value);
   
 
@@ -63,7 +68,7 @@ btnPost.addEventListener('click', () => {
     contPost.appendChild(btnUpdate);
     contPost.appendChild(btnDelete);
     posts.appendChild(contPost);
-})
+}})
 
 register.addEventListener("click", () => {
     firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
