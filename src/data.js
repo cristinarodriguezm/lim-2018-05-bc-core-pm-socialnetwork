@@ -2,19 +2,21 @@ window.onload = () => {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             login.classList.add("hidden");
-            logout.classList.remove("hidden");
+            // logout.classList.remove("hidden");
             wall.classList.remove("hidden");
             posts.classList.remove("hidden");
-            username.innerHTML = `Bienvenida ${user.displayName}`;
+            // username.innerHTML = `Bienvenida ${user.displayName}`;
             logo.classList.add("hidden");
+            navbar.classList.remove("hidden");
             console.log("Usuario logueado");
         } else {
             console.log("No esta logueado")
             login.classList.remove("hidden");
-            logout.classList.add("hidden");
+            // logout.classList.add("hidden");
             wall.classList.add("hidden");
             posts.classList.add("hidden");
             logo.classList.remove("hidden");
+            navbar.classList.add("hidden");
         }
     });
 }

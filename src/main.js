@@ -16,6 +16,9 @@ const post = document.getElementById("post");
 const posts = document.getElementById("posts");
 const username = document.getElementById("user-name");
 const logo = document.getElementById("logo");
+const navbar = document.getElementById("navbar");
+
+
 
 $(document).ready(function(){
     $('.collapsible').collapsible();

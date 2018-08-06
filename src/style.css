@@ -53,3 +53,9 @@ body {
     box-shadow: 1px 1px 1px grey;
     white-space: nowrap;
 }
+.nav-wrapper{
+    background-color: #B1EAC8;
+    display: flex;
+    justify-content: flex-end;
+}
+
