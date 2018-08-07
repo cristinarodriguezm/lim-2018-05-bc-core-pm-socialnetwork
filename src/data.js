@@ -1,3 +1,15 @@
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyDblgQKEDvEZWnkfqvDkKM1GXZtRkkwBrI",
+    authDomain: "social-network-8a5ae.firebaseapp.com",
+    databaseURL: "https://social-network-8a5ae.firebaseio.com",
+    projectId: "social-network-8a5ae",
+    storageBucket: "social-network-8a5ae.appspot.com",
+    messagingSenderId: "451218277174"
+};
+firebase.initializeApp(config);
+
+
 window.onload = () => {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
@@ -36,19 +48,32 @@ window.writeNewPost = (uid, body) => {
     var postData = {
         uid: uid,
         body: body,
+
     };
 
-    // Get a key for a new Post.
+    // genera un id para la publicacion
     var newPostKey = firebase.database().ref().child('posts').push().key;
 
-    // Write the new post's data simultaneously in the posts list and the user's post list.
+    // Registrar en el objeto posts y user-post la nueva publicación
     var updates = {};
+    postData.id = newPostKey;
     updates['/posts/' + newPostKey] = postData;
-    updates['/user-posts/' + uid + '/' + newPostKey] = postData;
+    updates['/user-posts/' + postData.uid + '/' + newPostKey] = postData;
 
     firebase.database().ref().update(updates);
     return newPostKey
-    
+
+}
+//función de editar post
+
+
+
+//funcion para eliminar posts
+window.btnDelete = (contPost) => {
+    console.log("userId", userId)
+    console.log("contPost", contPost)
+    firebase.database().ref().child('/user-posts/' + userId + '/' + contPost).remove();
+    firebase.database().ref().child('posts/' + contPost).remove();
 }
 
 
