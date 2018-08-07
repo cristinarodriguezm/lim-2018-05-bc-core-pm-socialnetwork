@@ -3,8 +3,11 @@ const logout = document.getElementById("logout")
 const btnLogOut = document.getElementById("btnLogout");
 const btnSignIn = document.getElementById("signinbtn");
 const register = document.getElementById("register");
+const name = document.getElementById("name");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
+const emailSigned = document.getElementById("email-signed");
+const passwordSigned = document.getElementById("password-signed");
 const btnGoogle = document.getElementById("btnGoogle");
 const btnFacebook = document.getElementById("btnFacebook");
 const wall = document.getElementById("wall");
@@ -12,6 +15,18 @@ const btnPost = document.getElementById("btnPost");
 const post = document.getElementById("post");
 const posts = document.getElementById("posts");
 const username = document.getElementById("user-name");
+const logo = document.getElementById("logo");
+const navbar = document.getElementById("navbar");
+
+
+
+$(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
+
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
 
 btnPost.addEventListener('click', () => {
     if(post.value===""){
@@ -26,9 +41,14 @@ btnPost.addEventListener('click', () => {
     var btnUpdate = document.createElement("input");
     btnUpdate.setAttribute("value", "Update");
     btnUpdate.setAttribute("type", "button");
+    btnUpdate.setAttribute("id", "btnUpdate");
+    btnUpdate.setAttribute("class", "btn waves-effect waves-light");
     var btnDelete = document.createElement("input");
     btnDelete.setAttribute("value", "Delete");
     btnDelete.setAttribute("type", "button");
+    btnDelete.setAttribute("id", "btnDelete");
+    btnDelete.setAttribute("class", "btn waves-effect waves-light");
+
     var contPost = document.createElement('div');
     var textPost = document.createElement('textarea')
     textPost.setAttribute("id", newPost);
@@ -81,10 +101,11 @@ register.addEventListener("click", () => {
 })
 
 btnSignIn.addEventListener("click", () => {
-    firebase.auth().signInWithEmailAndPassword(email.value, password.value)
+    firebase.auth().signInWithEmailAndPassword(emailSigned.value, passwordSigned.value)
+  
         .then(function () {
             console.log("Inicia sesion");
-            let user = result.user;
+            let user = result.user;        
             writeUserData(user.uid, user.displayName, user.email, user.photoURL)
         })
         .catch(function (error) {
