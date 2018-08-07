@@ -23,14 +23,17 @@ body {
     
 }
 
-#register {
+#register,
+#signinbtn,
+#btnUpdate,
+#btnDelete,
+#btnLogout,
+#btnPost {
     background-color: #B1EAC8;
-
-}
-#signinbtn{
-    background-color: #ffffff;
+    color: #444;
     border: 1px solid #B1EAC8;
 }
+
 #btnFacebook{
     background: #4267b2;
         border-radius: 5px;
@@ -50,3 +53,9 @@ body {
     box-shadow: 1px 1px 1px grey;
     white-space: nowrap;
 }
+.nav-wrapper{
+    background-color: #B1EAC8;
+    display: flex;
+    justify-content: flex-end;
+}
+

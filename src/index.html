@@ -11,17 +11,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 </head>
-
-<body>
-
-    <div class="container">
-
-
-        <div id="login" class="hidden">
-            <p id="user-name"></p>
-            <input type="button" id="btnLogout" value="Logout">
+<header class="hidden" id="navbar">
+    <nav>
+        <div class="nav-wrapper">
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li id="btnLogout">Cerrar Sesion</li>
+            </ul>
         </div>
-        <div id="logout" class="hidden">
+    </nav>
+</header>
+<br>
+<br>
+<body>
+    
+    <div class="container">
+        <div class="hidden" id="logo">
+            <img class="responsive-img"src="images/logo.jpg" alt="Imagen no cargo">
+        </div>
+        <br>
+        <div id="login" class="hidden">
             <div>
                 <input type="button" id="btnGoogle" value="Continuar con Google">
             </div>
@@ -34,32 +42,53 @@
                 <label for="email">email</label>
             </div>
             <div>
-                <input type="email" id="email">
+                <input type="email" id="email-signed">
             </div>
             <div>
                 <label for="password">password</label>
             </div>
             <div>
-                <input type="password" id="password">
+                <input type="password" id="password-signed">
             </div>
             <br>
             <div>
-                <input class="btnlogin" type="button" id="signinbtn" value="Iniciar Sesion">
-            </div>
-            <br>
-            <div>
-                <input class="btnlogin" type="button" value="Registrate" id="register">
-            </div>
+                <a class="waves-effect waves-light btn" id="signinbtn">Iniciar Sesion</a>
 
+            </div>
+            <br>
+
+            <div>
+                <ul class="collapsible">
+                    <li>
+                        <div class="collapsible-header">
+                            <i class="material-icons">create</i>Registrate</div>
+                        <div class="collapsible-body">
+                            <label for="name">Nombres</label>
+                            <input type="text" id="name">
+                            <label for="email">email</label>
+                            <input type="email" id="email">
+                            <label for="password">password</label>
+                            <input type="password" id="password">
+                            <div>
+                                <button class="btn waves-effect waves-light" type="submit" name="action" id="register">Enviar
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
         </div>
 
 
 
         <div id="wall" class="hidden">
-            <textarea name="Publicacion" id="textToPost" cols="30" rows="10"></textarea>
-            <input type="button" value="Publicar" id="btnPost">
+            <textarea name="Publicacion" id="post" cols="30" rows="10"></textarea>
+            <br>
+            <a class="waves-effect waves-light btn" id="btnPost">Publicar</a>
         </div>
-        <div id="wallPosts" class="hidden">
+        <div id="posts" class="hidden">
             <h3>
                 Publicaciones
             </h3>
@@ -68,22 +97,26 @@
 
 
     </div>
-</body>
 
-<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
-<script>
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyDblgQKEDvEZWnkfqvDkKM1GXZtRkkwBrI",
-        authDomain: "social-network-8a5ae.firebaseapp.com",
-        databaseURL: "https://social-network-8a5ae.firebaseio.com",
-        projectId: "social-network-8a5ae",
-        storageBucket: "social-network-8a5ae.appspot.com",
-        messagingSenderId: "451218277174"
-    };
-    firebase.initializeApp(config);
-</script>
-<script src="js/materialize.min.js"></script>
-<script src="main.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDblgQKEDvEZWnkfqvDkKM1GXZtRkkwBrI",
+            authDomain: "social-network-8a5ae.firebaseapp.com",
+            databaseURL: "https://social-network-8a5ae.firebaseio.com",
+            projectId: "social-network-8a5ae",
+            storageBucket: "social-network-8a5ae.appspot.com",
+            messagingSenderId: "451218277174"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="js/jquery.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="main.js"></script>
+    <script src="data.js"></script>
+</body>
 
 </html>
