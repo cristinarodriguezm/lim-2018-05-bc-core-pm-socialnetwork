@@ -34,11 +34,11 @@ let postData = {
 
 $(document).ready(function(){
     $('.collapsible').collapsible();
+    $('.sidenav').sidenav();
+    $(".dropdown-trigger").dropdown();
   });
 
-  $(document).ready(function(){
-    $('.sidenav').sidenav();
-  });
+
 
 btnPost.addEventListener('click', () => {
     if(post.value===""){
