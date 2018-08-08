@@ -18,7 +18,19 @@ const username = document.getElementById("user-name");
 const logo = document.getElementById("logo");
 const navbar = document.getElementById("navbar");
 
+// creando objeto que contiene la data del post
 
+let postData = {
+    uid: null,
+    title: null,
+    image: null,
+    content: null,
+    date: null,
+    category: null,
+    state: null,
+    likes: null,
+    comentary: null
+  };
 
 $(document).ready(function(){
     $('.collapsible').collapsible();
@@ -55,19 +67,20 @@ btnPost.addEventListener('click', () => {
 
     textPost.innerHTML = post.value;
 
-    btnDelete.addEventListener('click', () => {
+    btnDelete.addEventListener('click', () => {        
+        
+        while (contPost.firstChild) contPost.removeChild(contPost.firstChild);
 
-        firebase.database().ref().child('/user-posts/' + userId + '/' + newPost).remove();
-        firebase.database().ref().child('posts/' + newPost).remove();
-
-        while (posts.firstChild) posts.removeChild(posts.firstChild);
-
-        alert('The user is deleted successfully!');
+        alert('eliminar post');
+        //window.btnDelete(post.id)
+        console.log("post a eliminar", post)
         reload_page();
 
     });
 
     btnUpdate.addEventListener('click', () => {
+        console.log("diste click");
+        
         const newUpdate = document.getElementById(newPost);
         const nuevoPost = {
             body: newUpdate.value,
