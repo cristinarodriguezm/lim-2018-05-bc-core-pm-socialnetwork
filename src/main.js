@@ -42,7 +42,7 @@ $(document).ready(function(){
 
 btnPost.addEventListener('click', () => {
     if(post.value===""){
-        alert("Tu post esta vacio")
+        M.toast({html: 'Mensaje vacio, intenta de nuevo'})
     }
 
     else{
@@ -71,7 +71,7 @@ btnPost.addEventListener('click', () => {
         
         while (contPost.firstChild) contPost.removeChild(contPost.firstChild);
 
-        alert('eliminar post');
+        M.toast({html: 'Tu publicacion ha sido eliminada'})
         //window.btnDelete(post.id)
         console.log("post a eliminar", post)
         reload_page();

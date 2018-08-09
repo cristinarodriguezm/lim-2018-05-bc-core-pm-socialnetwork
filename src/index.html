@@ -52,22 +52,22 @@
     </nav>
 
     <ul class="sidenav" id="mobile-demo">
-            <ul id="dropdown1" class="dropdown-content">
-                    <li>
-                        <a href="#!">Farmacologia</a>
-                    </li>
-                    <li>
-                        <a href="#!">Material Educativo</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#!">Articulos</a>
-                    </li>
-                    <li>
-                        <a href="#!">Debates</a>
-                    </li>
-                </ul>
-                
+        <ul id="dropdown1" class="dropdown-content">
+            <li>
+                <a href="#!">Farmacologia</a>
+            </li>
+            <li>
+                <a href="#!">Material Educativo</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+                <a href="#!">Articulos</a>
+            </li>
+            <li>
+                <a href="#!">Debates</a>
+            </li>
+        </ul>
+
         <li id="btnLogout">Cerrar Sesion</li>
     </ul>
 </header>
@@ -76,78 +76,115 @@
 
 <body>
 
-    <div class="container">
-        <div class="hidden" id="logo">
-            <img class="responsive-img" src="images/logo.jpg" alt="Imagen no cargo">
-        </div>
-        <br>
-        <div id="login" class="hidden">
-            <div>
-                <input type="button" id="btnGoogle" value="Continuar con Google">
-            </div>
-            <br>
-            <div>
-                <input type="button" id="btnFacebook" value="Continuar con Facebook">
-            </div>
-            <br>
-            <div>
-                <label for="email">email</label>
-            </div>
-            <div>
-                <input type="email" id="email-signed">
-            </div>
-            <div>
-                <label for="password">password</label>
-            </div>
-            <div>
-                <input type="password" id="password-signed">
-            </div>
-            <br>
-            <div>
-                <a class="waves-effect waves-light btn" id="signinbtn">Iniciar Sesion</a>
 
-            </div>
-            <br>
 
-            <div>
-                <ul class="collapsible">
-                    <li>
-                        <div class="collapsible-header">
-                            <i class="material-icons">create</i>Registrate</div>
-                        <div class="collapsible-body">
-                            <label for="name">Nombres</label>
-                            <input type="text" id="name">
-                            <label for="email">email</label>
-                            <input type="email" id="email">
-                            <label for="password">password</label>
-                            <input type="password" id="password">
-                            <div>
-                                <button class="btn waves-effect waves-light" type="submit" name="action" id="register">Enviar
-                                    <i class="material-icons right">send</i>
-                                </button>
-                            </div>
-                        </div>
-
-                    </li>
-                </ul>
+    <div class="row">
+        <div class="hide-on-small-only">
+            <div class="col s12 m3 l2">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="images/farmacos.png">
+                        <a class="btn-floating halfway-fab waves-effect waves-light red">
+                            <i class="material-icons">add</i>
+                        </a>
+                    </div>
+                    <div class="card-content">
+                        <p>Lee los ultimos articulos farmacologicos</p>
+                    </div>
+                </div>
             </div>
         </div>
 
 
+        <div class="col s12 m8 l9">
+            <!-- Note that "m8 l9" was added -->
 
-        <div id="wall" class="hidden">
-            <textarea name="Publicacion" id="post" cols="30" rows="10"></textarea>
-            <br>
-            <a class="waves-effect waves-light btn" id="btnPost">Publicar</a>
+            <div class="container">
+                <div class="hidden" id="logo">
+                    <img class="responsive-img" src="images/logo.jpg" alt="Imagen no cargo">
+                </div>
+                <br>
+                <div id="login" class="hidden">
+                    <div>
+                        <input type="button" id="btnGoogle" value="Continuar con Google">
+                    </div>
+                    <br>
+                    <div>
+                        <input type="button" id="btnFacebook" value="Continuar con Facebook">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="email">email</label>
+                    </div>
+                    <div>
+                        <input type="email" id="email-signed">
+                    </div>
+                    <div>
+                        <label for="password">password</label>
+                    </div>
+                    <div>
+                        <input type="password" id="password-signed">
+                    </div>
+                    <br>
+                    <div>
+                        <a class="waves-effect waves-light btn" id="signinbtn">Iniciar Sesion</a>
+
+                    </div>
+                    <br>
+
+                    <div>
+                        <ul class="collapsible">
+                            <li>
+                                <div class="collapsible-header">
+                                    <i class="material-icons">create</i>Registrate</div>
+                                <div class="collapsible-body">
+                                    <label for="name">Nombres</label>
+                                    <input type="text" id="name">
+                                    <label for="email">email</label>
+                                    <input type="email" id="email">
+                                    <label for="password">password</label>
+                                    <input type="password" id="password">
+                                    <div>
+                                        <button class="btn waves-effect waves-light" type="submit" name="action" id="register">Enviar
+                                            <i class="material-icons right">send</i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+                <div id="wall" class="hidden">
+                    <textarea name="Publicacion" id="post" cols="30" rows="10"></textarea>
+                    <br>
+                    <a class="waves-effect waves-light btn" id="btnPost">Publicar</a>
+                </div>
+                <div id="posts" class="hidden">
+                    <h3>
+                        Publicaciones
+                    </h3>
+                </div>
+
+
+            </div>
         </div>
-        <div id="posts" class="hidden">
-            <h3>
-                Publicaciones
-            </h3>
-        </div>
-
-
-
+        <div class="row">
+            <div class="col s12 m3 l2">
+              <div class="card">
+                <div class="card-image">
+                  <img src="images/charla.jpg">
+                  <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                </div>
+                <div class="card-content">
+                  <p>Comparte tus casos con la comunidad medica</p>
+                </div>
+              </div>
+            </div>
+          </div>
     </div>
 
 

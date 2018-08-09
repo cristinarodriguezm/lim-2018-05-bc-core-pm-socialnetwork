@@ -32,21 +32,21 @@ Despues de definir nuestro producto y las ideas que queriamos llevar a cabo, com
 
 ![Imagen 1][1]  ![Imagen 2][2] ![Imagen 3][3] ![Imagen 4][4] ![Imagen 5][5]
 
- [1]: images/IMG_20180720_152652.jpg
- [2]: images/IMG_20180720_154815.jpg
- [3]: images/IMG_20180727_142754.jpg
- [4]: images/IMG_20180727_142806.jpg
- [5]: images/IMG_20180727_142813.jpg
+ [1]: src/images/IMG_20180720_152652.jpg
+ [2]: src/images/IMG_20180720_154815.jpg
+ [3]: src/images/IMG_20180727_142754.jpg
+ [4]: src/images/IMG_20180727_142806.jpg
+ [5]: src/images/IMG_20180727_142813.jpg
 
  Despues de la etapa de crear prototipos y de recibir feedback de algunas compañeras y de un par de usuarios, vimos que la interfaz era bastante clara y procedimos a crear prototipos de alta fidelidad.
 
  ![Imagen 6][6]  ![Imagen 7][7] ![Imagen 8][8] ![Imagen 9][9] ![Imagen 10][10]
 
- [6]: images/login.jpg
- [7]: images/registro.jpg
- [8]: images/Home.jpg
- [9]: images/Menu.jpg
- [10]: images/user-profile.jpg
+ [6]: src/images/login.jpg
+ [7]: src/images/registro.jpg
+ [8]: src/images/Home.jpg
+ [9]: src/images/Menu.jpg
+ [10]: src/images/user-profile.jpg
 
 
 ## Preámbulo
