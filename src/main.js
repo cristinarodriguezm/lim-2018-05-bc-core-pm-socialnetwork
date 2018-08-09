@@ -20,17 +20,7 @@ const navbar = document.getElementById("navbar");
 
 // creando objeto que contiene la data del post
 
-let postData = {
-    uid: null,
-    title: null,
-    image: null,
-    content: null,
-    date: null,
-    category: null,
-    state: null,
-    likes: null,
-    comentary: null
-  };
+
 
 $(document).ready(function(){
     $('.collapsible').collapsible();
@@ -60,6 +50,11 @@ btnPost.addEventListener('click', () => {
     btnDelete.setAttribute("type", "button");
     btnDelete.setAttribute("id", "btnDelete");
     btnDelete.setAttribute("class", "btn waves-effect waves-light");
+    var btnLike = document.createElement("input");
+    btnLike.setAttribute("value", "like");
+    btnLike.setAttribute("type", "button");
+    btnLike.setAttribute("id", "btnLike");
+    btnLike.setAttribute("class", "btn waves-effect waves-light");
 
     var contPost = document.createElement('div');
     var textPost = document.createElement('textarea')
@@ -100,6 +95,8 @@ btnPost.addEventListener('click', () => {
     contPost.appendChild(textPost);
     contPost.appendChild(btnUpdate);
     contPost.appendChild(btnDelete);
+    contPost.appendChild(btnLike);
+    
     posts.appendChild(contPost);
 }})
 

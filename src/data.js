@@ -48,7 +48,7 @@ window.writeNewPost = (uid, body) => {
     var postData = {
         uid: uid,
         body: body,
-
+        //key : id,
     };
 
     // genera un id para la publicacion
@@ -69,11 +69,26 @@ window.writeNewPost = (uid, body) => {
 
 
 //funcion para eliminar posts
-window.btnDelete = (contPost) => {
+window.btnDelete = (newPostKey) => {
     console.log("userId", userId)
     console.log("contPost", contPost)
-    firebase.database().ref().child('/user-posts/' + userId + '/' + contPost).remove();
-    firebase.database().ref().child('posts/' + contPost).remove();
+    firebase.database().ref().child('/user-posts/' + userId + '/' + newPostKey).remove();
+    firebase.database().ref().child('posts/' + newPostKey).remove();
 }
 
+//funcion para likes
+
+window.btnlikePost = (contPost, uid) => {
+	//Leer cuantos likes tiene
+	firebase.database().ref('/posts/' + contPost).once('value').then(function (snapshot) {
+		let like = snapshot.val().like;
+		like = like + 1;
+		firebase.database().ref('posts/' + contPost).update({
+			like: like
+		}, (error) => {
+			console.log(error)
+		});
+		
+	});
+}
 
