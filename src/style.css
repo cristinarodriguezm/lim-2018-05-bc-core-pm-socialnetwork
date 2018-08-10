@@ -58,4 +58,7 @@ body {
     justify-content: flex-end;
 }
 
+.col s12 m4 l3 {
+    padding: 0%
+}
 
