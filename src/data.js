@@ -48,47 +48,30 @@ window.writeNewPost = (uid, body) => {
     var postData = {
         uid: uid,
         body: body,
-        //key : id,
+        likes: 0
     };
 
-    // genera un id para la publicacion
+   
     var newPostKey = firebase.database().ref().child('posts').push().key;
-
-    // Registrar en el objeto posts y user-post la nueva publicación
     var updates = {};
     postData.id = newPostKey;
+    
     updates['/posts/' + newPostKey] = postData;
     updates['/user-posts/' + postData.uid + '/' + newPostKey] = postData;
+    
 
     firebase.database().ref().update(updates);
     return newPostKey
 
 }
-//función de editar post
-
-
 
 //funcion para eliminar posts
-window.btnDelete = (newPostKey) => {
+window.deletePost = (contPost,userId) => {
+    //alert('hola ' + contPost); return false;
     console.log("userId", userId)
     console.log("contPost", contPost)
-    firebase.database().ref().child('/user-posts/' + userId + '/' + newPostKey).remove();
-    firebase.database().ref().child('posts/' + newPostKey).remove();
+    firebase.database().ref().child('/user-posts/' + userId + '/' + contPost).remove();
+    firebase.database().ref().child('posts/' + contPost).remove();
 }
 
-//funcion para likes
-
-window.btnlikePost = (contPost, uid) => {
-	//Leer cuantos likes tiene
-	firebase.database().ref('/posts/' + contPost).once('value').then(function (snapshot) {
-		let like = snapshot.val().like;
-		like = like + 1;
-		firebase.database().ref('posts/' + contPost).update({
-			like: like
-		}, (error) => {
-			console.log(error)
-		});
-		
-	});
-}
 
