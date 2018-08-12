@@ -72,8 +72,9 @@ window.writeNewPost = (uid, body) => {
 window.btnDelete = (contPost) => {
     console.log("userId", userId)
     console.log("contPost", contPost)
+
+
     firebase.database().ref().child('/user-posts/' + userId + '/' + contPost).remove();
     firebase.database().ref().child('posts/' + contPost).remove();
 }
-
 
