@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Social Network</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/materialize.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" href="css/materialize.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 </head>
@@ -68,7 +68,7 @@
             </li>
         </ul>
 
-        <li id="btnLogout2">Cerrar Sesion</li>
+        <li id="btnLogout">Cerrar Sesion</li>
     </ul>
 </header>
 <br>
@@ -77,9 +77,29 @@
 <body>
 
 
-    <div class="container">
-        <div class="row">
-            <div class="col s12 m6 offset-m3">
+
+    <div class="row">
+        <div class="hide-on-small-only">
+            <div class="col s12 m3 l2">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="images/farmacos.png">
+                        <a class="btn-floating halfway-fab waves-effect waves-light red">
+                            <i class="material-icons">add</i>
+                        </a>
+                    </div>
+                    <div class="card-content">
+                        <p>Lee los ultimos articulos farmacologicos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col s12 m8 l9">
+            <!-- Note that "m8 l9" was added -->
+
+            <div class="container">
                 <div class="hidden" id="logo">
                     <img class="responsive-img" src="images/logo.jpg" alt="Imagen no cargo">
                 </div>
@@ -152,18 +172,28 @@
 
             </div>
         </div>
-       
+        <div class="row">
+            <div class="col s12 m3 l2">
+              <div class="card">
+                <div class="card-image">
+                  <img src="images/charla.jpg">
+                  <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                </div>
+                <div class="card-content">
+                  <p>Comparte tus casos con la comunidad medica</p>
+                </div>
+              </div>
+            </div>
+          </div>
     </div>
 
-</body>
 
-
-<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
-<script src="js/jquery.js"></script>
-<script src="js/materialize.min.js"></script>
-<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<script src="main.js"></script>
-<script src="data.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="main.js"></script>
+    <script src="data.js"></script>
 </body>
 
 </html>

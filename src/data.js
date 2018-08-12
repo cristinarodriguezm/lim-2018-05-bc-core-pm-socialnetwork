@@ -70,9 +70,8 @@ window.deletePost = (contPost,userId) => {
     //alert('hola ' + contPost); return false;
     console.log("userId", userId)
     console.log("contPost", contPost)
-
-
     firebase.database().ref().child('/user-posts/' + userId + '/' + contPost).remove();
     firebase.database().ref().child('posts/' + contPost).remove();
 }
+
 

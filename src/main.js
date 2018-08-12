@@ -2,7 +2,6 @@
 const login = document.getElementById("login");
 const logout = document.getElementById("logout")
 const btnLogOut = document.getElementById("btnLogout");
-const btnLogOut2 = document.getElementById("btnLogout2");
 const btnSignIn = document.getElementById("signinbtn");
 const register = document.getElementById("register");
 const name = document.getElementById("name");
@@ -69,14 +68,9 @@ btnPost.addEventListener('click', () => {
 
         M.toast({html: 'Tu publicacion ha sido eliminada'})
         //window.btnDelete(post.id)
-<<<<<<< HEAD
-        console.log("post a eliminar", post)
-       
-=======
         console.log("post a eliminar", post);
         deletePost(textPost.id,userId);
         //reload_page();
->>>>>>> 7b9f1edb2d325c3d67cf8766ba36ccc6d1f505e7
 
     });
 
@@ -159,18 +153,6 @@ btnSignIn.addEventListener("click", () => {
 })
 
 btnLogOut.addEventListener("click", () => {
-    firebase.auth().signOut()
-        .then(function () {
-            console.log("Cerro Sesion");
-            login.classList.remove("hidden");
-            logout.classList.add("hidden");
-
-        }).catch(function (error) {
-            console.log("Error al cerrar sesion")
-        });
-})
-
-btnLogOut2.addEventListener("click", () => {
     firebase.auth().signOut()
         .then(function () {
             console.log("Cerro Sesion");
