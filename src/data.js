@@ -48,28 +48,26 @@ window.writeNewPost = (uid, body) => {
     var postData = {
         uid: uid,
         body: body,
-
+        likes: 0
     };
 
-    // genera un id para la publicacion
+   
     var newPostKey = firebase.database().ref().child('posts').push().key;
-
-    // Registrar en el objeto posts y user-post la nueva publicación
     var updates = {};
     postData.id = newPostKey;
+    
     updates['/posts/' + newPostKey] = postData;
     updates['/user-posts/' + postData.uid + '/' + newPostKey] = postData;
+    
 
     firebase.database().ref().update(updates);
     return newPostKey
 
 }
-//función de editar post
-
-
 
 //funcion para eliminar posts
-window.btnDelete = (contPost) => {
+window.deletePost = (contPost,userId) => {
+    //alert('hola ' + contPost); return false;
     console.log("userId", userId)
     console.log("contPost", contPost)
 
