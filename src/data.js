@@ -20,6 +20,7 @@ window.onload = () => {
             // username.innerHTML = `Bienvenida ${user.displayName}`;
             logo.classList.add("hidden");
             navbar.classList.remove("hidden");
+            sideBar.classList.remove("hidden")
             console.log("Usuario logueado");
         } else {
             console.log("No esta logueado")
@@ -29,6 +30,7 @@ window.onload = () => {
             posts.classList.add("hidden");
             logo.classList.remove("hidden");
             navbar.classList.add("hidden");
+            sideBar.classList.add("hidden")
         }
     });
 }

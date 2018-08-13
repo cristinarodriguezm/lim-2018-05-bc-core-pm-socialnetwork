@@ -2,6 +2,7 @@
 const login = document.getElementById("login");
 const logout = document.getElementById("logout")
 const btnLogOut = document.getElementById("btnLogout");
+const btnLogout2 = document.getElementById("btnLogout2");
 const btnSignIn = document.getElementById("signinbtn");
 const register = document.getElementById("register");
 const name = document.getElementById("name");
@@ -18,6 +19,7 @@ const posts = document.getElementById("posts");
 const username = document.getElementById("user-name");
 const logo = document.getElementById("logo");
 const navbar = document.getElementById("navbar");
+const sideBar = document.getElementById("side-bar")
 
 // creando objeto que contiene la data del post
 
@@ -153,6 +155,18 @@ btnSignIn.addEventListener("click", () => {
 })
 
 btnLogOut.addEventListener("click", () => {
+    firebase.auth().signOut()
+        .then(function () {
+            console.log("Cerro Sesion");
+            login.classList.remove("hidden");
+            logout.classList.add("hidden");
+
+        }).catch(function (error) {
+            console.log("Error al cerrar sesion")
+        });
+})
+
+btnLogout2.addEventListener("click", () => {
     firebase.auth().signOut()
         .then(function () {
             console.log("Cerro Sesion");
