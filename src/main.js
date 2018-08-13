@@ -185,6 +185,18 @@ btnLogout2.addEventListener("click", () => {
         });
 })
 
+btnLogout2.addEventListener("click", () => {
+    firebase.auth().signOut()
+        .then(function () {
+            console.log("Cerro Sesion");
+            login.classList.remove("hidden");
+            logout.classList.add("hidden");
+
+        }).catch(function (error) {
+            console.log("Error al cerrar sesion")
+        });
+})
+
 btnGoogle.addEventListener("click", () => {
     let provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider)
