@@ -94,6 +94,4 @@ window.deletePost = (contPost,userId) => {
     firebase.database().ref().child('posts/' + contPost).remove();
 }
 
-window.reload_page= ()=>{
-    window.location.reload();
-  }
+

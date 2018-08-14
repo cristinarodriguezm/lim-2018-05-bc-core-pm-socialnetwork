@@ -149,7 +149,7 @@ function crearElementos(userId, newPost, texto){
         //window.btnDelete(post.id)
         console.log("post a eliminar", post);
         deletePost(textPost.id,userId);
-        reload_page();
+       
         }
         else {
          ;
