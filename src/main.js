@@ -119,18 +119,18 @@ function crearElementos(userId, newPost, texto){
     //console.log('entra a crear');
     
     var btnUpdate = document.createElement("input");
-    btnUpdate.setAttribute("value", "Update");
+    btnUpdate.setAttribute("value", "Editar");
     btnUpdate.setAttribute("type", "button");
     btnUpdate.setAttribute("id", "btnUpdate");
     btnUpdate.setAttribute("class", "btn waves-effect waves-light");
     var btnDelete = document.createElement("input");
-    btnDelete.setAttribute("value", "Delete");
+    btnDelete.setAttribute("value", "Eliminar");
     btnDelete.setAttribute("type", "button");
     btnDelete.setAttribute("id", "btnDelete");
     btnDelete.setAttribute("class", "btn modal-trigger");
     btnDelete.setAttribute("data-target", "modal1");
     var btnlike = document.createElement("input");
-    btnlike.setAttribute("value", "like");
+    btnlike.setAttribute("value", "Me gusta");
     btnlike.setAttribute("type", "button");
     btnlike.setAttribute("id", "btnlike");
     btnlike.setAttribute("class", "btn waves-effect waves-light");
