@@ -19,18 +19,17 @@ const posts = document.getElementById("posts");
 const username = document.getElementById("user-name");
 const logo = document.getElementById("logo");
 const navbar = document.getElementById("navbar");
-const sideBar = document.getElementById("side-bar")
-
+const sideBar = document.getElementById("side-bar");
+let checkBox = document.getElementById("check-box");
+const private = document.getElementById("private")
 // creando objeto que contiene la data del post
 
 
 $(document).ready(function(){
     $('.collapsible').collapsible();
-    $('.sidenav').sidenav();
     $(".dropdown-trigger").dropdown();
-    $('.modal').modal();
-  });
 
+  });
 
 
 btnPost.addEventListener('click', () => {
@@ -235,3 +234,4 @@ btnFacebook.addEventListener("click", () => {
             console.log(error.credential);
         });
 })
+
