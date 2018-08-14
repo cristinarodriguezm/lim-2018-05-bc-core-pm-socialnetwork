@@ -25,24 +25,25 @@ const private = document.getElementById("private")
 // creando objeto que contiene la data del post
 
 
-$(document).ready(function(){
+$(document).ready(function () {
     $('.collapsible').collapsible();
     $(".dropdown-trigger").dropdown();
 
-  });
+});
 
 
 btnPost.addEventListener('click', () => {
-    if(post.value===""){
-        M.toast({html: 'Mensaje vacio, intenta de nuevo'})
+    if (post.value === "") {
+        M.toast({ html: 'Mensaje vacio, intenta de nuevo' })
     }
 
-    else{
-    let userId = firebase.auth().currentUser.uid;
-    const newPost = writeNewPost(userId, post.value);
-    //crearElementos(userId,post.value);
-//,newPost
-}})
+    else {
+        let userId = firebase.auth().currentUser.uid;
+        const newPost = writeNewPost(userId, post.value);
+        //crearElementos(userId,post.value);
+        //,newPost
+    }
+})
 
 register.addEventListener("click", () => {
     firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
@@ -56,10 +57,10 @@ register.addEventListener("click", () => {
 
 btnSignIn.addEventListener("click", () => {
     firebase.auth().signInWithEmailAndPassword(emailSigned.value, passwordSigned.value)
-  
+
         .then(function () {
             console.log("Inicia sesion");
-            let user = result.user;        
+            let user = result.user;
             writeUserData(user.uid, user.displayName, user.email, user.photoURL)
         })
         .catch(function (error) {
@@ -115,9 +116,9 @@ btnFacebook.addEventListener("click", () => {
 })
 
 
-function crearElementos(userId, newPost, texto){
+function crearElementos(userId, newPost, texto) {
     //console.log('entra a crear');
-    
+
     var btnUpdate = document.createElement("input");
     btnUpdate.setAttribute("value", "Editar");
     btnUpdate.setAttribute("type", "button");
@@ -141,24 +142,24 @@ function crearElementos(userId, newPost, texto){
 
     textPost.innerHTML = texto;
 
-    btnDelete.addEventListener('click', () => {        
+    btnDelete.addEventListener('click', () => {
         const opcion = confirm("Estas seguro que deseas eliminar este post");
         if (opcion == true) {
-        while (contPost.firstChild) contPost.removeChild(contPost.firstChild);
-        M.toast({html: 'Tu publicacion ha sido eliminada'})
-        //window.btnDelete(post.id)
-        console.log("post a eliminar", post);
-        deletePost(textPost.id,userId);
-       
+            while (contPost.firstChild) contPost.removeChild(contPost.firstChild);
+            M.toast({ html: 'Tu publicacion ha sido eliminada' })
+            //window.btnDelete(post.id)
+            console.log("post a eliminar", post);
+            deletePost(textPost.id, userId);
+
         }
         else {
-         ;
-          }
+            ;
+        }
     });
 
     btnUpdate.addEventListener('click', () => {
         console.log("diste click " + newPost);
-        
+
         const newUpdate = document.getElementById(newPost);
         const nuevoPost = {
             body: newUpdate.value
@@ -171,44 +172,44 @@ function crearElementos(userId, newPost, texto){
 
     btnlike.addEventListener('click', () => {
         console.log("diste click");
-        
+
         //const newUpdate = document.getElementById(newPost);
         const nuevoLike = {
-          
-        };       
-       //agregar idusuario como clave dinamica
+
+        };
+        //agregar idusuario como clave dinamica
         nuevoLike[userId] = 1;
 
-        firebase.database().ref('posts/' + newPost+"/likes/"+userId).once("value")
-        .then(function(snapshot){//evalua si existe la ruta y lo devuelve
+        firebase.database().ref('posts/' + newPost + "/likes/" + userId).once("value")
+            .then(function (snapshot) {//evalua si existe la ruta y lo devuelve
 
-            if(snapshot.exists()){//metodo exists
-                console.log("ya tiene like");
-                //si el like del usuario ya existe lo elimina 
-                firebase.database().ref().child('/user-posts/' + userId + '/' + newPost+"/likes/"+userId).remove();
-                firebase.database().ref().child('posts/' + newPost+"/likes/"+userId).remove();
-                btnlike.style.backgroundColor = "grey";
-                
-                   
-            return false;
-            }else{
-                console.log("no tiene like");
-               //insertar like del usuario
-        firebase.database().ref('/user-posts/' + userId + '/' + newPost+"/likes").update(nuevoLike);
-        firebase.database().ref('/posts/' + newPost+"/likes").update(nuevoLike);
-        btnlike.style.backgroundColor = "green";
+                if (snapshot.exists()) {//metodo exists
+                    console.log("ya tiene like");
+                    //si el like del usuario ya existe lo elimina 
+                    firebase.database().ref().child('/user-posts/' + userId + '/' + newPost + "/likes/" + userId).remove();
+                    firebase.database().ref().child('posts/' + newPost + "/likes/" + userId).remove();
+                    btnlike.style.backgroundColor = "grey";
+
+
+                    return false;
+                } else {
+                    console.log("no tiene like");
+                    //insertar like del usuario
+                    firebase.database().ref('/user-posts/' + userId + '/' + newPost + "/likes").update(nuevoLike);
+                    firebase.database().ref('/posts/' + newPost + "/likes").update(nuevoLike);
+                    btnlike.style.backgroundColor = "green";
                     var contador = 0;
-                    document.getElementById("btnlike").onclick = function(){
+                    document.getElementById("btnlike").onclick = function () {
                         contador++;
                         alert(contador);
-                    
-                }
-           // return false;
-            }
-            
-        });
 
-       
+                    }
+                    // return false;
+                }
+
+            });
+
+
 
     });
 

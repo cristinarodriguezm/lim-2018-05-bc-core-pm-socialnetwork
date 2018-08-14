@@ -13,7 +13,7 @@ firebase.initializeApp(config);
 window.onload = () => {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-         
+
             login.classList.add("hidden");
             wall.classList.remove("hidden");
             posts.classList.remove("hidden");
@@ -37,13 +37,13 @@ window.onload = () => {
 
 
 window.loadData = (userId) => {
-    console.log('entra a loadData de '+userId);
-    firebase.database().ref('user-posts/'+userId).on('child_added',function(snapshot){
+    console.log('entra a loadData de ' + userId);
+    firebase.database().ref('user-posts/' + userId).on('child_added', function (snapshot) {
 
         var post = snapshot.val().body;
         var idPost = snapshot.val().id;
 
-        crearElementos(userId,idPost,post);        
+        crearElementos(userId, idPost, post);
 
     });
 
@@ -64,7 +64,7 @@ window.writeNewPost = (uid, body, likes) => {
         uid: uid,
         body: body,
         likes: 0
-    
+
     };
 
     // genera un id para la publicacion
@@ -73,10 +73,10 @@ window.writeNewPost = (uid, body, likes) => {
     // Registrar en el objeto posts y user-post la nueva publicación
     var updates = {};
     postData.id = newPostKey;
-    
+
     updates['/posts/' + newPostKey] = postData;
     updates['/user-posts/' + postData.uid + '/' + newPostKey] = postData;
-    
+
 
     firebase.database().ref().update(updates);
     return newPostKey
@@ -86,7 +86,7 @@ window.writeNewPost = (uid, body, likes) => {
 
 
 //funcion para eliminar posts
-window.deletePost = (contPost,userId) => {
+window.deletePost = (contPost, userId) => {
     //alert('hola ' + contPost); return false;
     console.log("userId", userId)
     console.log("contPost", contPost)
