@@ -66,16 +66,20 @@ btnPost.addEventListener('click', () => {
 
     textPost.innerHTML = post.value;
 
+   
     btnDelete.addEventListener('click', () => {        
-        
+        const opcion = confirm("Estas seguro que deseas eliminar este post");
+        if (opcion == true) {
         while (contPost.firstChild) contPost.removeChild(contPost.firstChild);
-
         M.toast({html: 'Tu publicacion ha sido eliminada'})
         //window.btnDelete(post.id)
         console.log("post a eliminar", post);
         deletePost(textPost.id,userId);
-        //reload_page();
-
+        reload_page();
+        }
+        else {
+         ;
+          }
     });
 
     btnUpdate.addEventListener('click', () => {
