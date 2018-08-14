@@ -21,7 +21,8 @@ window.onload = () => {
             navbar.classList.remove("hidden");
             sideBar.classList.remove("hidden")
             console.log("Usuario logueado");
-           
+            console.log(user.uid);
+            loadData(user.uid);
         } else {
             console.log("No esta logueado")
             login.classList.remove("hidden");
@@ -34,6 +35,19 @@ window.onload = () => {
     });
 }
 
+
+window.loadData = (userId) => {
+    console.log('entra a loadData de '+userId);
+    firebase.database().ref('user-posts/'+userId).on('child_added',function(snapshot){
+
+        var post = snapshot.val().body;
+        var idPost = snapshot.val().id;
+
+        crearElementos(userId,idPost,post);        
+
+    });
+
+}
 
 window.writeUserData = (userId, name, email, imageUrl) => {
     firebase.database().ref('users/' + userId).set({
@@ -52,9 +66,11 @@ window.writeNewPost = (uid, body, likes) => {
         likes: 0
     
     };
-    
-   
+
+    // genera un id para la publicacion
     var newPostKey = firebase.database().ref().child('posts').push().key;
+
+    // Registrar en el objeto posts y user-post la nueva publicación
     var updates = {};
     postData.id = newPostKey;
     
@@ -66,6 +82,8 @@ window.writeNewPost = (uid, body, likes) => {
     return newPostKey
 
 }
+
+
 
 //funcion para eliminar posts
 window.deletePost = (contPost,userId) => {

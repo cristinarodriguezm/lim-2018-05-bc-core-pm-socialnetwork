@@ -40,8 +40,84 @@ btnPost.addEventListener('click', () => {
     else{
     let userId = firebase.auth().currentUser.uid;
     const newPost = writeNewPost(userId, post.value);
-  
+    //crearElementos(userId,post.value);
+//,newPost
+}})
 
+register.addEventListener("click", () => {
+    firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
+        .then(function () {
+            console.log("Se creo el usuario");
+        })
+        .catch(function (error) {
+            console.log(error.code, error.message);
+        });
+})
+
+btnSignIn.addEventListener("click", () => {
+    firebase.auth().signInWithEmailAndPassword(emailSigned.value, passwordSigned.value)
+  
+        .then(function () {
+            console.log("Inicia sesion");
+            let user = result.user;        
+            writeUserData(user.uid, user.displayName, user.email, user.photoURL)
+        })
+        .catch(function (error) {
+            console.log(error.code, error.message);
+        });
+})
+
+btnLogOut.addEventListener("click", () => {
+    firebase.auth().signOut()
+        .then(function () {
+            console.log("Cerro Sesion");
+            login.classList.remove("hidden");
+            logout.classList.add("hidden");
+
+        }).catch(function (error) {
+            console.log("Error al cerrar sesion")
+        });
+})
+
+btnGoogle.addEventListener("click", () => {
+    let provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider)
+        .then(function (result) {
+            console.log("Sesion con Google");
+            let user = result.user;
+            writeUserData(user.uid, user.displayName, user.email, user.photoURL)
+        }).catch(function (error) {
+
+            console.log(error.code);
+            console.log(error.message);
+            console.log(error.email);
+            console.log(error.credential);
+
+        });
+})
+
+btnFacebook.addEventListener("click", () => {
+    let provider = new firebase.auth.FacebookAuthProvider();
+    provider.setCustomParameters({
+        'display': 'popup'
+    });
+    firebase.auth().signInWithPopup(provider)
+        .then(function (result) {
+            console.log("Logueado con Facebook")
+            let user = result.user;
+            writeUserData(user.uid, user.displayName, user.email, user.photoURL)
+        }).catch(function (error) {
+            console.log(error.code);
+            console.log(error.message);
+            console.log(error.email);
+            console.log(error.credential);
+        });
+})
+
+
+function crearElementos(userId, newPost, texto){
+    //console.log('entra a crear');
+    
     var btnUpdate = document.createElement("input");
     btnUpdate.setAttribute("value", "Update");
     btnUpdate.setAttribute("type", "button");
@@ -63,9 +139,8 @@ btnPost.addEventListener('click', () => {
     var textPost = document.createElement('textarea')
     textPost.setAttribute("id", newPost);
 
-    textPost.innerHTML = post.value;
+    textPost.innerHTML = texto;
 
-   
     btnDelete.addEventListener('click', () => {        
         const opcion = confirm("Estas seguro que deseas eliminar este post");
         if (opcion == true) {
@@ -101,24 +176,33 @@ btnPost.addEventListener('click', () => {
         const nuevoLike = {
           
         };       
-       
+       //agregar idusuario como clave dinamica
         nuevoLike[userId] = 1;
 
         firebase.database().ref('posts/' + newPost+"/likes/"+userId).once("value")
-        .then(function(snapshot){
+        .then(function(snapshot){//evalua si existe la ruta y lo devuelve
 
-            if(snapshot.exists()){
+            if(snapshot.exists()){//metodo exists
                 console.log("ya tiene like");
                 //si el like del usuario ya existe lo elimina 
                 firebase.database().ref().child('/user-posts/' + userId + '/' + newPost+"/likes/"+userId).remove();
                 firebase.database().ref().child('posts/' + newPost+"/likes/"+userId).remove();
                 btnlike.style.backgroundColor = "grey";
+                
+                   
             return false;
             }else{
                 console.log("no tiene like");
+               //insertar like del usuario
         firebase.database().ref('/user-posts/' + userId + '/' + newPost+"/likes").update(nuevoLike);
         firebase.database().ref('/posts/' + newPost+"/likes").update(nuevoLike);
         btnlike.style.backgroundColor = "green";
+                    var contador = 0;
+                    document.getElementById("btnlike").onclick = function(){
+                        contador++;
+                        alert(contador);
+                    
+                }
            // return false;
             }
             
@@ -132,8 +216,8 @@ btnPost.addEventListener('click', () => {
     contPost.appendChild(btnUpdate);
     contPost.appendChild(btnDelete);
     contPost.appendChild(btnlike);
-
     posts.appendChild(contPost);
+<<<<<<< HEAD
 }})
 
 register.addEventListener("click", () => {
@@ -235,3 +319,9 @@ btnFacebook.addEventListener("click", () => {
         });
 })
 
+=======
+
+}
+
+
+>>>>>>> 444e167587c0c0313da682c713d0eb077f1b9e05
