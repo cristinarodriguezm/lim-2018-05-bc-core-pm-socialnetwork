@@ -20,16 +20,26 @@ const username = document.getElementById("user-name");
 const logo = document.getElementById("logo");
 const navbar = document.getElementById("navbar");
 const sideBar = document.getElementById("side-bar");
-let checkBox = document.getElementById("check-box");
-const private = document.getElementById("private")
+const checkBox = document.getElementById("check-box");
+const privateWall = document.getElementById("private-wall")
 // creando objeto que contiene la data del post
 
 
 $(document).ready(function () {
     $('.collapsible').collapsible();
     $(".dropdown-trigger").dropdown();
+    $('.sidenav').sidenav();
 
 });
+
+checkBox.addEventListener("change", ()=> {
+   if(checkBox.checked == true){
+    posts.classList.add("hidden");
+    privateWall.classList.remove("hidden");
+   } else
+   post.classList.remove("hidden");
+   privateWall.classList.add("hidden");
+})
 
 
 btnPost.addEventListener('click', () => {
@@ -128,8 +138,7 @@ function crearElementos(userId, newPost, texto) {
     btnDelete.setAttribute("value", "Eliminar");
     btnDelete.setAttribute("type", "button");
     btnDelete.setAttribute("id", "btnDelete");
-    btnDelete.setAttribute("class", "btn modal-trigger");
-    btnDelete.setAttribute("data-target", "modal1");
+    btnDelete.setAttribute("class", "btn waves-effect waves-light");
     var btnlike = document.createElement("input");
     btnlike.setAttribute("value", "Me gusta");
     btnlike.setAttribute("type", "button");
@@ -220,5 +229,4 @@ function crearElementos(userId, newPost, texto) {
     posts.appendChild(contPost);
 
 }
-
 

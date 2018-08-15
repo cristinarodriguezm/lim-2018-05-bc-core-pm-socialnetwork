@@ -9,8 +9,6 @@
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/materialize.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-    
-    
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 </head>
@@ -56,24 +54,27 @@
     </nav>
 
     <ul class="sidenav" id="mobile-demo">
-        <ul id="dropdown1" class="dropdown-content">
-            <li>
-                <a href="#!">Farmacologia</a>
-            </li>
-            <li>
-                <a href="#!">Material Educativo</a>
-            </li>
-            <li class="divider"></li>
-            <li>
-                <a href="#!">Articulos</a>
-            </li>
-            <li>
-                <a href="#!">Debates</a>
-            </li>
-        </ul>
-
-        <li id="btnLogout2">Cerrar Sesion</li>
+        <li>
+            <a href="">Mi perfil</a>
+        </li>
+        <li>
+            <a href="">Cuenta</a>
+        </li>
+        <li>
+            <a href="">Privacidad</a>
+        </li>
+        <li>
+            <a href="">Configuracion</a>
+        </li>
+        <li>
+            <a href="">Ayuda</a>
+        </li>
+        <li id="btnLogout2">
+            <a>Cerrar Sesion</a>
+        </li>
     </ul>
+
+
 </header>
 <br>
 <br>
@@ -207,7 +208,11 @@
                     </h4>
 
                 </div>
-
+                <div id="private-wall" class="hidden">
+                    <h4>
+                        Publicaciones Privadas
+                    </h4>
+                </div>
             </div>
         </div>
     </div>
@@ -218,7 +223,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/materialize.min.js"></script>
-  
+
     <script src="main.js"></script>
     <script src="data.js"></script>
 </body>
