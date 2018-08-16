@@ -32,6 +32,9 @@ window.onload = () => {
             navbar.classList.add("hidden");
             sideBar.classList.add("hidden")
         }
+
+      
+    
     });
 }
 
@@ -82,6 +85,8 @@ window.writeNewPost = (uid, body, likes) => {
     return newPostKey
 
 }
+
+
 
 
 

@@ -32,14 +32,6 @@ $(document).ready(function () {
 
 });
 
-checkBox.addEventListener("change", ()=> {
-   if(checkBox.checked == true){
-    posts.classList.add("hidden");
-    privateWall.classList.remove("hidden");
-   } else
-   post.classList.remove("hidden");
-   privateWall.classList.add("hidden");
-})
 
 
 btnPost.addEventListener('click', () => {
@@ -107,6 +99,8 @@ btnGoogle.addEventListener("click", () => {
         });
 })
 
+
+
 btnFacebook.addEventListener("click", () => {
     let provider = new firebase.auth.FacebookAuthProvider();
     provider.setCustomParameters({
@@ -126,7 +120,8 @@ btnFacebook.addEventListener("click", () => {
 })
 
 
-function crearElementos(userId, newPost, texto) {
+
+crearElementos = (userId, newPost, texto) => {
     //console.log('entra a crear');
 
     var btnUpdate = document.createElement("input");
@@ -166,6 +161,9 @@ function crearElementos(userId, newPost, texto) {
         }
     });
 
+   
+ 
+
     btnUpdate.addEventListener('click', () => {
         console.log("diste click " + newPost);
 
@@ -178,6 +176,7 @@ function crearElementos(userId, newPost, texto) {
         firebase.database().ref('/posts/' + newPost).update(nuevoPost);
 
     });
+
 
     btnlike.addEventListener('click', () => {
         console.log("diste click");
@@ -229,4 +228,57 @@ function crearElementos(userId, newPost, texto) {
     posts.appendChild(contPost);
 
 }
+
+checkBox.addEventListener("change", ()=>{
+   if(checkBox.checked==true){
+      privateWall.classList.remove("hidden");
+      posts.classList.add("hidden");
+    
+      crearElementos = (userId, newPost, texto) => {
+        //console.log('entra a crear');
+    
+        var btnUpdate = document.createElement("input");
+        btnUpdate.setAttribute("value", "Editar");
+        btnUpdate.setAttribute("type", "button");
+        btnUpdate.setAttribute("id", "btnUpdate");
+        btnUpdate.setAttribute("class", "btn waves-effect waves-light");
+        var btnDelete = document.createElement("input");
+        btnDelete.setAttribute("value", "Eliminar");
+        btnDelete.setAttribute("type", "button");
+        btnDelete.setAttribute("id", "btnDelete");
+        btnDelete.setAttribute("class", "btn waves-effect waves-light");
+        var btnlike = document.createElement("input");
+        btnlike.setAttribute("value", "Me gusta");
+        btnlike.setAttribute("type", "button");
+        btnlike.setAttribute("id", "btnlike");
+        btnlike.setAttribute("class", "btn waves-effect waves-light");
+    
+        var privateCont = document.createElement('div');
+        var privatePost = document.createElement('textarea')
+        privatePost.setAttribute("id", newPost);
+    
+        privateWall.innerHTML = texto;
+    
+        btnDelete.addEventListener('click', () => {
+            const opcion = confirm("Estas seguro que deseas eliminar este post");
+            if (opcion == true) {
+                while (privateCont.firstChild) privateCont.removeChild(privateCont.firstChild);
+                M.toast({ html: 'Tu publicacion ha sido eliminada' })
+                //window.btnDelete(post.id)
+                console.log("post a eliminar", post);
+                deletePost(privatePost.id, userId);
+    
+            }
+            else {
+                ;
+            }
+        });
+    
+
+    } 
+   } else {
+    privateWall.classList.add("hidden");
+    posts.classList.remove("hidden");
+   }
+ })
 
