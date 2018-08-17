@@ -14,6 +14,7 @@ const btnGoogle = document.getElementById("btnGoogle");
 const btnFacebook = document.getElementById("btnFacebook");
 const wall = document.getElementById("wall");
 const btnPost = document.getElementById("btnPost");
+const btnPost2 = document.getElementById("btnPost2");
 const post = document.getElementById("post");
 const posts = document.getElementById("posts");
 const username = document.getElementById("user-name");
@@ -46,6 +47,20 @@ btnPost.addEventListener('click', () => {
         //,newPost
     }
 })
+
+btnPost2.addEventListener('click', () => {
+    if (post.value === "") {
+        M.toast({ html: 'Mensaje vacio, intenta de nuevo' })
+    }
+
+    else {
+        let userId = firebase.auth().currentUser.uid;
+        const newPost = writeNewPost(userId, post.value);
+        //crearElementos(userId,post.value);
+        //,newPost
+    }
+})
+
 
 register.addEventListener("click", () => {
     firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
@@ -229,53 +244,120 @@ crearElementos = (userId, newPost, texto) => {
 
 }
 
+crearElementos2 = (userId, newPost, texto) => {
+    //console.log('entra a crear');
+
+    var btnUpdate = document.createElement("input");
+    btnUpdate.setAttribute("value", "Editar");
+    btnUpdate.setAttribute("type", "button");
+    btnUpdate.setAttribute("id", "btnUpdate");
+    btnUpdate.setAttribute("class", "btn waves-effect waves-light");
+    var btnDelete = document.createElement("input");
+    btnDelete.setAttribute("value", "Eliminar");
+    btnDelete.setAttribute("type", "button");
+    btnDelete.setAttribute("id", "btnDelete");
+    btnDelete.setAttribute("class", "btn waves-effect waves-light");
+    var btnlike = document.createElement("input");
+    btnlike.setAttribute("value", "Me gusta");
+    btnlike.setAttribute("type", "button");
+    btnlike.setAttribute("id", "btnlike");
+    btnlike.setAttribute("class", "btn waves-effect waves-light");
+
+    var contPost = document.createElement('div');
+    var textPost = document.createElement('textarea')
+    textPost.setAttribute("id", newPost);
+
+    textPost.innerHTML = texto;
+
+    btnDelete.addEventListener('click', () => {
+        const opcion = confirm("Estas seguro que deseas eliminar este post");
+        if (opcion == true) {
+            while (contPost.firstChild) contPost.removeChild(contPost.firstChild);
+            M.toast({ html: 'Tu publicacion ha sido eliminada' })
+            //window.btnDelete(post.id)
+            console.log("post a eliminar", post);
+            deletePost(textPost.id, userId);
+
+        }
+        else {
+            ;
+        }
+    });
+
+   
+ 
+
+    btnUpdate.addEventListener('click', () => {
+        console.log("diste click " + newPost);
+
+        const newUpdate = document.getElementById(newPost);
+        const nuevoPost = {
+            body: newUpdate.value
+        };
+
+        firebase.database().ref('/user-posts/' + userId + '/' + newPost).update(nuevoPost);
+        firebase.database().ref('/posts/' + newPost).update(nuevoPost);
+
+    });
+
+
+    btnlike.addEventListener('click', () => {
+        console.log("diste click");
+
+        //const newUpdate = document.getElementById(newPost);
+        const nuevoLike = {
+
+        };
+        //agregar idusuario como clave dinamica
+        nuevoLike[userId] = 1;
+
+        firebase.database().ref('posts/' + newPost + "/likes/" + userId).once("value")
+            .then(function (snapshot) {//evalua si existe la ruta y lo devuelve
+
+                if (snapshot.exists()) {//metodo exists
+                    console.log("ya tiene like");
+                    //si el like del usuario ya existe lo elimina 
+                    firebase.database().ref().child('/user-posts/' + userId + '/' + newPost + "/likes/" + userId).remove();
+                    firebase.database().ref().child('posts/' + newPost + "/likes/" + userId).remove();
+                    btnlike.style.backgroundColor = "grey";
+
+
+                    return false;
+                } else {
+                    console.log("no tiene like");
+                    //insertar like del usuario
+                    firebase.database().ref('/user-posts/' + userId + '/' + newPost + "/likes").update(nuevoLike);
+                    firebase.database().ref('/posts/' + newPost + "/likes").update(nuevoLike);
+                    btnlike.style.backgroundColor = "green";
+                    var contador = 0;
+                    document.getElementById("btnlike").onclick = function () {
+                        contador++;
+                        alert(contador);
+
+                    }
+                    // return false;
+                }
+
+            });
+
+
+
+    });
+
+    contPost.appendChild(textPost);
+    contPost.appendChild(btnUpdate);
+    contPost.appendChild(btnDelete);
+    contPost.appendChild(btnlike);
+    privateWall.appendChild(contPost);
+
+}
+
+
 checkBox.addEventListener("change", ()=>{
    if(checkBox.checked==true){
       privateWall.classList.remove("hidden");
       posts.classList.add("hidden");
-    
-      crearElementos = (userId, newPost, texto) => {
-        //console.log('entra a crear');
-    
-        var btnUpdate = document.createElement("input");
-        btnUpdate.setAttribute("value", "Editar");
-        btnUpdate.setAttribute("type", "button");
-        btnUpdate.setAttribute("id", "btnUpdate");
-        btnUpdate.setAttribute("class", "btn waves-effect waves-light");
-        var btnDelete = document.createElement("input");
-        btnDelete.setAttribute("value", "Eliminar");
-        btnDelete.setAttribute("type", "button");
-        btnDelete.setAttribute("id", "btnDelete");
-        btnDelete.setAttribute("class", "btn waves-effect waves-light");
-        var btnlike = document.createElement("input");
-        btnlike.setAttribute("value", "Me gusta");
-        btnlike.setAttribute("type", "button");
-        btnlike.setAttribute("id", "btnlike");
-        btnlike.setAttribute("class", "btn waves-effect waves-light");
-    
-        var privateCont = document.createElement('div');
-        var privatePost = document.createElement('textarea')
-        privatePost.setAttribute("id", newPost);
-    
-        privateWall.innerHTML = texto;
-    
-        btnDelete.addEventListener('click', () => {
-            const opcion = confirm("Estas seguro que deseas eliminar este post");
-            if (opcion == true) {
-                while (privateCont.firstChild) privateCont.removeChild(privateCont.firstChild);
-                M.toast({ html: 'Tu publicacion ha sido eliminada' })
-                //window.btnDelete(post.id)
-                console.log("post a eliminar", post);
-                deletePost(privatePost.id, userId);
-    
-            }
-            else {
-                ;
-            }
-        });
-    
-
-    } 
+      
    } else {
     privateWall.classList.add("hidden");
     posts.classList.remove("hidden");
